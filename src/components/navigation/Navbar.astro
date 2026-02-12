@@ -1,0 +1,25 @@
+---
+import { Button } from "@/components/ui/button";
+---
+
+<header class="sticky top-4 z-50 mx-auto w-[95%] max-w-7xl">
+    <nav
+        class="flex items-center justify-between border-2 border-border bg-secondary-background px-6 py-4 shadow-shadow rounded-base"
+    >
+        <a
+            href="/"
+            class="text-2xl font-heading tracking-tighter transition-all hover:skew-x-2"
+        >
+            TECH<span class="text-main">COMMERCE</span>
+        </a>
+        <div
+            class="hidden items-center gap-8 md:flex font-heading text-sm uppercase"
+        >
+            <a href="#features" class="hover:text-main">Features</a>
+            <a href="#how-it-works" class="hover:text-main">How it works</a>
+            <a href="#pricing" class="hover:text-main">Pricing</a>
+            <a href="#faq" class="hover:text-main">FAQ</a>
+            <Button size="sm">Get Started</Button>
+        </div>
+    </nav>
+</header>

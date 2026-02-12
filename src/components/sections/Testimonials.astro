@@ -1,0 +1,64 @@
+---
+import { Card } from "@/components/ui/card";
+---
+
+<section class="mx-auto max-w-7xl py-24 px-6 overflow-hidden">
+    <h2
+        class="text-5xl md:text-8xl font-heading text-center mb-16 uppercase italic"
+    >
+        THEY <span class="bg-main px-2">SWITCHED.</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <Card
+            className="p-10 rotate-1 hover:rotate-0 transition-transform bg-zinc-50"
+        >
+            <div
+                class="text-5xl mb-6 font-heading text-main drop-shadow-[2px_2px_0px_#000]"
+            >
+                "
+            </div>
+            <p class="text-2xl font-bold mb-8 italic">
+                "Since switching to TechCommerce, our monthly profit increased
+                by 22%. We finally feel like we're working for ourselves again,
+                not for an algorithm."
+            </p>
+            <div class="flex items-center gap-4 border-t-2 border-border pt-6">
+                <div
+                    class="w-12 h-12 bg-main border-2 border-border rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                >
+                </div>
+                <div>
+                    <div class="font-heading uppercase">MARCO ROSSI</div>
+                    <div class="text-sm font-bold text-zinc-500 uppercase">
+                        Owner, Mama's Pizza
+                    </div>
+                </div>
+            </div>
+        </Card>
+        <Card
+            className="p-10 -rotate-1 hover:rotate-0 transition-transform bg-zinc-50"
+        >
+            <div
+                class="text-5xl mb-6 font-heading text-main drop-shadow-[2px_2px_0px_#000]"
+            >
+                "
+            </div>
+            <p class="text-2xl font-bold mb-8 italic">
+                "The 0% commission is a game changer, but the customer support
+                is what kept us. They actually care about our success."
+            </p>
+            <div class="flex items-center gap-4 border-t-2 border-border pt-6">
+                <div
+                    class="w-12 h-12 bg-zinc-200 border-2 border-border rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                >
+                </div>
+                <div>
+                    <div class="font-heading uppercase">SARAH JENSEN</div>
+                    <div class="text-sm font-bold text-zinc-500 uppercase">
+                        Manager, The Juice Lab
+                    </div>
+                </div>
+            </div>
+        </Card>
+    </div>
+</section>

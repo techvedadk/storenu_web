@@ -1,0 +1,58 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const {
+    title,
+    description = "Redefined takeaway ordering system for modern restaurants. 0% Commission. 100% Control.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body
+        class="bg-background text-foreground selection:bg-main selection:text-main-foreground font-base"
+    >
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    @font-face {
+        font-family: "Outfit";
+        font-display: swap;
+    }
+
+    .font-heading {
+        font-weight: 800;
+    }
+
+    /* Custom selection color */
+    ::selection {
+        background-color: var(--main);
+        color: black;
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+</style>

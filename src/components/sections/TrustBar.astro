@@ -1,0 +1,33 @@
+---
+
+---
+
+<section class="border-y-2 border-border bg-main py-8 -mx-4 overflow-hidden">
+    <div class="flex whitespace-nowrap animate-marquee">
+        <div class="flex gap-20 items-center px-10">
+            {
+                [...Array(10)].map(() => (
+                    <span class="text-2xl font-heading uppercase italic text-black whitespace-nowrap">
+                        Trusted by 500+ Restaurants &bull; No Commission &bull;
+                        Instant Setup &bull; 24/7 Support &bull;
+                    </span>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 40s linear infinite;
+    }
+</style>

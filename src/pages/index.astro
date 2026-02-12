@@ -1,0 +1,28 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/navigation/Navbar.astro";
+import Footer from "@/components/navigation/Footer.astro";
+import Hero from "@/components/sections/Hero.astro";
+import TrustBar from "@/components/sections/TrustBar.astro";
+import Stats from "@/components/sections/Stats.astro";
+import Features from "@/components/sections/Features.astro";
+import Testimonials from "@/components/sections/Testimonials.astro";
+import Pricing from "@/components/sections/Pricing.astro";
+import FAQ from "@/components/sections/FAQ.astro";
+---
+
+<Layout title="TechCommerce | Redefined Neo-Brutalism ordering">
+	<Navbar />
+
+	<main class="mt-8">
+		<Hero />
+		<TrustBar />
+		<Stats />
+		<Features />
+		<Testimonials />
+		<Pricing />
+		<FAQ />
+	</main>
+
+	<Footer />
+</Layout>

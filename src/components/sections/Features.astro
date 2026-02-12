@@ -1,0 +1,157 @@
+---
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+---
+
+<section id="features" class="mx-auto max-w-7xl py-24 px-6">
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+        <div class="lg:w-1/3 sticky top-32">
+            <h2
+                class="text-5xl md:text-7xl font-heading leading-none uppercase mb-8"
+            >
+                WHY <span
+                    class="bg-main px-2 border-2 border-border shadow-shadow"
+                    >WE WIN.</span
+                >
+            </h2>
+            <p class="text-xl font-medium mb-8">
+                Other systems take a piece of your pie. We just give you the
+                recipe for success and get out of the way.
+            </p>
+            <Button variant="secondary" size="lg">EXPLORE ALL FEATURES</Button>
+        </div>
+        <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="hover:bg-main transition-colors group">
+                <CardHeader>
+                    <div
+                        class="w-12 h-12 border-2 border-border bg-white flex items-center justify-center mb-4 group-hover:bg-secondary-background"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                            ></path><circle cx="9" cy="7" r="4"></circle><path
+                                d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path
+                                d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+                        >
+                    </div>
+                    <CardTitle className="text-3xl italic uppercase"
+                        >OWN THE CUSTOMER</CardTitle
+                    >
+                </CardHeader>
+                <CardContent className="font-bold text-lg">
+                    Stop being an anonymous kitchen. Build your brand and keep
+                    customer data for direct marketing.
+                </CardContent>
+            </Card>
+
+            <Card className="hover:bg-main transition-colors group lg:mt-12">
+                <CardHeader>
+                    <div
+                        class="w-12 h-12 border-2 border-border bg-white flex items-center justify-center mb-4 group-hover:bg-secondary-background"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><rect
+                                x="2"
+                                y="3"
+                                width="20"
+                                height="14"
+                                rx="2"
+                                ry="2"></rect><line
+                                x1="8"
+                                y1="21"
+                                x2="16"
+                                y2="21"></line><line
+                                x1="12"
+                                y1="17"
+                                x2="12"
+                                y2="21"></line></svg
+                        >
+                    </div>
+                    <CardTitle className="text-3xl italic uppercase"
+                        >DEDICATED APP</CardTitle
+                    >
+                </CardHeader>
+                <CardContent className="font-bold text-lg">
+                    A custom-branded ordering app on your own domain.
+                    Professionally designed and high-converting.
+                </CardContent>
+            </Card>
+
+            <Card className="hover:bg-main transition-colors group">
+                <CardHeader>
+                    <div
+                        class="w-12 h-12 border-2 border-border bg-white flex items-center justify-center mb-4 group-hover:bg-secondary-background"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                            ></polygon></svg
+                        >
+                    </div>
+                    <CardTitle className="text-3xl italic uppercase"
+                        >5-STAR SUPPORT</CardTitle
+                    >
+                </CardHeader>
+                <CardContent className="font-bold text-lg">
+                    We're not just a software company. We're your tech partners,
+                    available whenever your kitchen is open.
+                </CardContent>
+            </Card>
+
+            <Card className="hover:bg-main transition-colors group lg:mt-12">
+                <CardHeader>
+                    <div
+                        class="w-12 h-12 border-2 border-border bg-white flex items-center justify-center mb-4 group-hover:bg-secondary-background"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><circle cx="12" cy="12" r="10"></circle><polyline
+                                points="12 6 12 12 16 14"></polyline></svg
+                        >
+                    </div>
+                    <CardTitle className="text-3xl italic uppercase"
+                        >AUTO CAPACITY</CardTitle
+                    >
+                </CardHeader>
+                <CardContent className="font-bold text-lg">
+                    Manage high volumes automatically. Set order limits to avoid
+                    kitchen stress during peak hours.
+                </CardContent>
+            </Card>
+        </div>
+    </div>
+</section>
