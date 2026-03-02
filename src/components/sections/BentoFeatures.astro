@@ -1,0 +1,161 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="grow" class="mx-auto max-w-7xl py-24 px-6">
+    <div class="text-center mb-16">
+        <h2
+            class="text-5xl md:text-8xl font-heading uppercase leading-none mb-4 italic"
+        >
+            {t("bento.title")}
+            <span class="bg-main px-4 border-2 border-border shadow-shadow"
+                >{t("bento.titleAccent")}</span
+            >
+        </h2>
+        <p class="text-xl md:text-2xl font-bold max-w-2xl mx-auto">
+            {t("bento.description")}
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Retail POS -->
+        <div
+            class="md:col-span-2 border-4 border-border bg-white p-8 shadow-shadow hover:bg-main transition-colors group flex flex-col md:flex-row gap-8 overflow-hidden"
+        >
+            <div class="md:w-1/2">
+                <h3 class="text-3xl font-heading uppercase italic mb-4">
+                    {t("bento.pos.title")}
+                </h3>
+                <p class="font-bold text-lg mb-6">
+                    {t("bento.pos.description")}
+                </p>
+                <div
+                    class="inline-block border-2 border-border px-4 py-2 bg-white shadow-shadow-sm font-heading uppercase text-sm"
+                >
+                    {t("bento.pos.badge")}
+                </div>
+            </div>
+            <div class="md:w-1/2 flex items-center justify-center">
+                <img
+                    src="/bento/pos.png"
+                    alt="POS Tablet"
+                    class="border-4 border-border shadow-shadow group-hover:-rotate-2 transition-transform w-full object-cover"
+                />
+            </div>
+        </div>
+
+        <!-- Multi Store Support -->
+        <div
+            class="border-4 border-border bg-white p-8 shadow-shadow hover:bg-main transition-colors group"
+        >
+            <h3 class="text-3xl font-heading uppercase italic mb-4">
+                {t("bento.multi.title")}
+            </h3>
+            <p class="font-bold text-lg mb-6 leading-tight">
+                {t("bento.multi.description")}
+            </p>
+            <div class="relative mt-auto">
+                <img
+                    src="/bento/multistore.png"
+                    alt="Multi Store Dashboard"
+                    class="border-2 border-border shadow-shadow-sm group-hover:scale-105 transition-transform w-full object-cover"
+                />
+            </div>
+        </div>
+
+        <!-- AI Chat -->
+        <div
+            class="border-4 border-border bg-white p-8 shadow-shadow hover:bg-main transition-colors group"
+        >
+            <h3 class="text-3xl font-heading uppercase italic mb-4">
+                {t("bento.ai.title")}
+            </h3>
+            <p class="font-bold text-lg mb-6 leading-tight">
+                {t("bento.ai.description")}
+            </p>
+            <div
+                class="relative bg-black h-40 border-2 border-border flex items-center justify-center overflow-hidden"
+            >
+                <img
+                    src="/bento/aichat.png"
+                    alt="AI Chat Concept"
+                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                />
+            </div>
+        </div>
+
+        <!-- Android & iPhone Terminals -->
+        <div
+            class="md:col-span-2 border-4 border-border bg-white p-8 shadow-shadow hover:bg-main transition-colors group flex flex-col md:flex-row gap-8"
+        >
+            <div class="md:w-1/2 flex items-center justify-center">
+                <img
+                    src="/bento/terminals.png"
+                    alt="Mobile Terminals"
+                    class="border-4 border-border shadow-shadow group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform w-full object-cover"
+                />
+            </div>
+            <div class="md:w-1/2">
+                <h3 class="text-3xl font-heading uppercase italic mb-4">
+                    {t("bento.mobile.title")}
+                </h3>
+                <p class="font-bold text-lg mb-6">
+                    {t("bento.mobile.description")}
+                </p>
+                <div class="flex gap-4">
+                    <span
+                        class="border-2 border-border bg-black text-white px-3 py-1 font-heading text-xs uppercase"
+                        >Android</span
+                    >
+                    <span
+                        class="border-2 border-border bg-black text-white px-3 py-1 font-heading text-xs uppercase"
+                        >iOS</span
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- Headless Commerce -->
+        <div
+            class="border-4 border-border bg-black text-white p-8 shadow-shadow hover:bg-main hover:text-black transition-colors group overflow-hidden"
+        >
+            <h3 class="text-3xl font-heading uppercase italic mb-4">
+                {t("bento.headless.title")}
+            </h3>
+            <p class="font-bold text-lg mb-6 leading-tight">
+                {t("bento.headless.description")}
+            </p>
+            <div class="relative overflow-hidden">
+                <img
+                    src="/bento/headless.png"
+                    alt="Headless Visualization"
+                    class="w-full h-auto object-cover group-hover:scale-110 transition-transform brightness-125"
+                />
+            </div>
+        </div>
+
+        <!-- Partners & Integrations -->
+        <div
+            class="md:col-span-2 border-4 border-border bg-white p-8 shadow-shadow hover:bg-main transition-colors group flex flex-col justify-between"
+        >
+            <div>
+                <h3 class="text-3xl font-heading uppercase italic mb-4">
+                    {t("bento.partner.title")}
+                </h3>
+                <p class="font-bold text-lg mb-4">
+                    {t("bento.partner.description")}
+                </p>
+            </div>
+            <div class="grid grid-cols-4 md:grid-cols-6 gap-4">
+                <img
+                    src="/bento/partners.png"
+                    alt="Integrations"
+                    class="col-span-full border-2 border-border shadow-shadow-sm h-32 object-cover"
+                />
+            </div>
+        </div>
+    </div>
+</section>

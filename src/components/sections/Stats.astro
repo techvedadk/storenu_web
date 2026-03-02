@@ -1,40 +1,64 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="border-b-4 border-border bg-white py-16 -mx-4">
-    <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-7xl px-6 text-center">
+        <h2
+            class="font-heading text-2xl md:text-3xl mb-12 uppercase border-2 border-border inline-block px-8 py-4 bg-white shadow-shadow hover:bg-main transition-colors"
+        >
+            {t("stats.title")}
+        </h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
             <div
                 class="text-center group border-2 border-border p-6 shadow-shadow hover:bg-main transition-colors"
             >
-                <div class="text-6xl font-heading text-black mb-2">500+</div>
+                <div
+                    class="text-4xl font-heading text-black mb-2 uppercase text-balance"
+                >
+                    {t("stats.hosted")}
+                </div>
                 <div class="text-sm font-heading uppercase tracking-widest">
-                    KITCHENS
+                    {t("stats.hostedSub")}
                 </div>
             </div>
             <div
                 class="text-center group border-2 border-border p-6 shadow-shadow hover:bg-main transition-colors"
             >
-                <div class="text-6xl font-heading text-black mb-2">1.2M</div>
+                <div
+                    class="text-3xl font-heading text-black mb-2 uppercase text-balance"
+                >
+                    {t("stats.payment")}
+                </div>
                 <div class="text-sm font-heading uppercase tracking-widest">
-                    MEALS DONE
+                    {t("stats.paymentSub")}
                 </div>
             </div>
             <div
                 class="text-center group border-2 border-border p-6 shadow-shadow hover:bg-main transition-colors"
             >
-                <div class="text-6xl font-heading text-black mb-2">0%</div>
+                <div
+                    class="text-3xl font-heading text-black mb-2 uppercase text-balance"
+                >
+                    {t("stats.gdpr")}
+                </div>
                 <div class="text-sm font-heading uppercase tracking-widest">
-                    FEES TAKEN
+                    {t("stats.gdprSub")}
                 </div>
             </div>
             <div
                 class="text-center group border-2 border-border p-6 shadow-shadow hover:bg-main transition-colors"
             >
-                <div class="text-6xl font-heading text-black mb-2">99%</div>
+                <div
+                    class="text-4xl font-heading text-black mb-2 uppercase text-balance"
+                >
+                    {t("stats.control")}
+                </div>
                 <div class="text-sm font-heading uppercase tracking-widest">
-                    OWNER LUV
+                    {t("stats.controlSub")}
                 </div>
             </div>
         </div>

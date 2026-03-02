@@ -1,25 +1,43 @@
 ---
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/Logo";
+import { StartStoreDialog } from "@/components/StartStoreDialog";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="sticky top-4 z-50 mx-auto w-[95%] max-w-7xl">
     <nav
-        class="flex items-center justify-between border-2 border-border bg-secondary-background px-6 py-4 shadow-shadow rounded-base"
+        class="flex items-center justify-between border-2 border-border bg-secondary-background px-4 shadow-shadow rounded-base"
     >
-        <a
-            href="/"
-            class="text-2xl font-heading tracking-tighter transition-all hover:skew-x-2"
-        >
-            TECH<span class="text-main">COMMERCE</span>
-        </a>
+        <Logo client:load lang={lang} />
         <div
-            class="hidden items-center gap-8 md:flex font-heading text-sm uppercase"
+            class="hidden items-center gap-6 md:flex font-heading text-sm uppercase"
         >
-            <a href="#features" class="hover:text-main">Features</a>
-            <a href="#how-it-works" class="hover:text-main">How it works</a>
-            <a href="#pricing" class="hover:text-main">Pricing</a>
-            <a href="#faq" class="hover:text-main">FAQ</a>
-            <Button size="sm">Get Started</Button>
+            <a href="#features" class="hover:text-main">{t("nav.features")}</a>
+            <a href="#pricing" class="hover:text-main">{t("nav.pricing")}</a>
+
+            <div class="flex items-center gap-2 border-l-2 border-border pl-6">
+                <a
+                    href="/"
+                    class={`hover:text-main ${lang === "en" ? "text-main underline decoration-2 underline-offset-4" : ""}`}
+                >
+                    EN
+                </a>
+                <span class="text-zinc-400">/</span>
+                <a
+                    href="/dk"
+                    class={`hover:text-main ${lang === "dk" ? "text-main underline decoration-2 underline-offset-4" : ""}`}
+                >
+                    DK
+                </a>
+            </div>
+
+            <StartStoreDialog client:load lang={lang}>
+                <Button size="sm">{t("nav.getStarted")}</Button>
+            </StartStoreDialog>
         </div>
     </nav>
 </header>

@@ -1,29 +1,37 @@
 ---
 import { Button } from "@/components/ui/button";
+import { StartStoreDialog } from "@/components/StartStoreDialog";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="mx-auto max-w-7xl pt-12 pb-24 px-6 text-center">
     <div
         class="inline-block rounded-base border-2 border-border bg-main px-4 py-1 text-xs font-heading shadow-shadow uppercase mb-8"
     >
-        The 0% Commission Revolution
+        {t("hero.badge")}
     </div>
     <h1 class="mb-8 text-6xl font-heading leading-tight md:text-9xl">
-        EAT THE <span
+        {t("hero.title")}
+        <span
             class="bg-white px-4 border-4 border-border shadow-shadow italic lg:rotate-2 inline-block"
-            >PORTALS.</span
+            >{t("hero.titleAccent")}</span
         >
     </h1>
     <p class="mx-auto mb-10 max-w-2xl text-xl font-medium md:text-2xl">
-        Stop bleeding profits to delivery giants. Own your customers, own your
-        data, and keep <span class="bg-main px-1">100% of your revenue.</span>
+        {t("hero.description")}
+        <span class="bg-main px-1">{t("hero.descriptionAccent")}</span>
     </p>
     <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <Button size="lg" className="text-xl px-12 h-16"
-            >CLAIM YOUR SYSTEM</Button
-        >
+        <StartStoreDialog client:load lang={lang}>
+            <Button size="lg" className="text-xl px-12 h-16"
+                >{t("hero.cta")}</Button
+            >
+        </StartStoreDialog>
         <Button variant="outline" size="lg" className="text-xl px-12 h-16"
-            >BOOK A DEMO</Button
+            >{t("hero.demo")}</Button
         >
     </div>
 
@@ -40,11 +48,13 @@ import { Button } from "@/components/ui/button";
             </div>
             <!-- Decorative elements -->
             <div
-                class="absolute -left-8 -top-8 h-24 w-24 rounded-full border-2 border-border bg-main shadow-shadow md:flex items-center justify-center hidden"
+                class="absolute -left-8 -top-8 h-32 w-32 rounded-full border-2 border-border bg-main shadow-shadow md:flex items-center justify-center hidden"
             >
                 <span
                     class="font-heading text-sm rotate-12 text-center leading-none uppercase"
-                    >0%<br />Comm.</span
+                    >{t("hero.commissionBadge")}<br />{
+                        t("hero.commissionSub")
+                    }</span
                 >
             </div>
             <div

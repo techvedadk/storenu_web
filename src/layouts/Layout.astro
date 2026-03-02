@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { getLangFromUrl } from "@/i18n/utils";
 
 interface Props {
     title: string;
@@ -10,14 +11,15 @@ const {
     title,
     description = "Redefined takeaway ordering system for modern restaurants. 0% Commission. 100% Control.",
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>

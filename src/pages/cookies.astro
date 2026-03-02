@@ -1,0 +1,165 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/navigation/Navbar.astro";
+import Footer from "@/components/navigation/Footer.astro";
+---
+
+<Layout
+    title="Cookie Policy | Store'nU"
+    description="Cookie Policy for Techveda ApS and Store'nU services."
+>
+    <Navbar />
+
+    <main class="mt-24 mb-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="bg-secondary-background border-4 border-border p-8 md:p-12 shadow-shadow rounded-base"
+            >
+                <h1 class="text-4xl md:text-6xl font-heading mb-4 uppercase">
+                    Cookie Policy
+                </h1>
+                <p class="text-xl font-bold mb-8 text-zinc-600">
+                    Last updated on 23/Feb/2026
+                </p>
+
+                <div
+                    class="prose prose-zinc prose-invert max-w-none space-y-8 text-lg font-medium leading-relaxed"
+                >
+                    <section class="space-y-4">
+                        <p>
+                            We believe in a private and transparent web. This
+                            policy explains how <span
+                                class="text-main font-bold italic"
+                                >Techveda ApS</span
+                            > ("we", "us", or "our") uses cookies and similar technologies
+                            on our website.
+                        </p>
+                        <p>
+                            Our landing page is designed to be as
+                            privacy-focused as possible. We do not store
+                            unnecessary personal data or use invasive tracking
+                            cookies.
+                        </p>
+                    </section>
+
+                    <section class="space-y-4">
+                        <h2 class="text-3xl font-heading uppercase">
+                            What are cookies?
+                        </h2>
+                        <p>
+                            Cookies are small text files that are stored on your
+                            computer or mobile device when you visit a website.
+                            They are widely used to make websites work more
+                            efficiently and provide information to the owners of
+                            the site.
+                        </p>
+                    </section>
+
+                    <section class="space-y-4">
+                        <h2
+                            class="text-3xl font-heading uppercase border-b-4 border-main pb-2 inline-block"
+                        >
+                            How we use cookies
+                        </h2>
+                        <p>
+                            We use a minimal number of cookies to ensure our
+                            website functions correctly and to understand how
+                            visitors interact with our content.
+                        </p>
+
+                        <div class="space-y-6 mt-6">
+                            <div
+                                class="border-2 border-border p-6 rounded-base bg-main/5"
+                            >
+                                <h3 class="text-xl font-heading uppercase mb-2">
+                                    1. Essential Cookies
+                                </h3>
+                                <p>
+                                    These cookies are necessary for the website
+                                    to function and cannot be switched off. They
+                                    are usually only set in response to actions
+                                    made by you, such as filling in forms.
+                                </p>
+                                <ul
+                                    class="list-disc list-inside mt-2 font-bold space-y-1"
+                                >
+                                    <li>
+                                        <span class="text-main"
+                                            >Cloudflare Turnstile:</span
+                                        > We use this to prevent spam and ensure human
+                                        interaction on our form submissions without
+                                        the need for invasive CAPTCHAs.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="border-2 border-border p-6 rounded-base bg-main/5"
+                            >
+                                <h3 class="text-xl font-heading uppercase mb-2">
+                                    2. Performance & Analytics
+                                </h3>
+                                <p>
+                                    We may use lightweight, privacy-friendly
+                                    analytics to count visits and traffic
+                                    sources so we can measure and improve the
+                                    performance of our site. These tools process
+                                    data in a way that does not identify you
+                                    personally.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="space-y-4">
+                        <h2 class="text-3xl font-heading uppercase">
+                            Cookies from third parties
+                        </h2>
+                        <p>
+                            In some cases, we use cookies provided by trusted
+                            third parties. The "Services" section of our Privacy
+                            Policy details the subcontractors we work with. Most
+                            notably, Cloudflare helps protect our site from
+                            malicious traffic.
+                        </p>
+                    </section>
+
+                    <section
+                        class="space-y-4 text-center py-8 bg-zinc-100 dark:bg-zinc-900 border-2 border-dashed border-border rounded-base"
+                    >
+                        <h2 class="text-2xl font-heading uppercase mb-2">
+                            No Tracking? No Problem.
+                        </h2>
+                        <p class="font-bold">
+                            If you prefer not to have any cookies stored, you
+                            can adjust your browser settings to refuse cookies
+                            or to alert you when cookies are being sent.
+                        </p>
+                    </section>
+
+                    <section
+                        class="bg-main/10 border-2 border-border p-6 rounded-base"
+                    >
+                        <h2 class="text-2xl font-heading uppercase mb-4">
+                            Contact us about your privacy:
+                        </h2>
+                        <address class="not-italic space-y-1 font-bold">
+                            <p>Techveda ApS</p>
+                            <p>Gersonsvej 51 1</p>
+                            <p>2900 Hellerup</p>
+                            <p>
+                                E-mail: <a
+                                    href="mailto:data@techveda.dk"
+                                    class="underline decoration-2 decoration-main hover:text-main"
+                                    >data@techveda.dk</a
+                                >
+                            </p>
+                        </address>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

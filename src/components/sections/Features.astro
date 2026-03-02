@@ -1,6 +1,10 @@
 ---
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="features" class="mx-auto max-w-7xl py-24 px-6">
@@ -9,16 +13,17 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
             <h2
                 class="text-5xl md:text-7xl font-heading leading-none uppercase mb-8"
             >
-                WHY <span
-                    class="bg-main px-2 border-2 border-border shadow-shadow"
-                    >WE WIN.</span
+                {t("features.title")}
+                <span class="bg-main px-2 border-2 border-border shadow-shadow"
+                    >{t("features.titleAccent")}</span
                 >
             </h2>
             <p class="text-xl font-medium mb-8">
-                Other systems take a piece of your pie. We just give you the
-                recipe for success and get out of the way.
+                {t("features.description")}
             </p>
-            <Button variant="secondary" size="lg">EXPLORE ALL FEATURES</Button>
+            <Button id="open-features-modal" variant="secondary" size="lg"
+                >{t("features.cta")}</Button
+            >
         </div>
         <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="hover:bg-main transition-colors group">
@@ -36,19 +41,18 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            ><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                            ></path><circle cx="9" cy="7" r="4"></circle><path
-                                d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path
-                                d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+                            ><path
+                                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z"
+                            ></path><line x1="3" y1="6" x2="21" y2="6"
+                            ></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg
                         >
                     </div>
                     <CardTitle className="text-3xl italic uppercase"
-                        >OWN THE CUSTOMER</CardTitle
+                        >{t("features.omni")}</CardTitle
                     >
                 </CardHeader>
                 <CardContent className="font-bold text-lg">
-                    Stop being an anonymous kitchen. Build your brand and keep
-                    customer data for direct marketing.
+                    {t("features.omni.desc")}
                 </CardContent>
             </Card>
 
@@ -68,29 +72,26 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             ><rect
-                                x="2"
-                                y="3"
-                                width="20"
-                                height="14"
+                                x="3"
+                                y="4"
+                                width="18"
+                                height="18"
                                 rx="2"
                                 ry="2"></rect><line
-                                x1="8"
-                                y1="21"
+                                x1="16"
+                                y1="2"
                                 x2="16"
-                                y2="21"></line><line
-                                x1="12"
-                                y1="17"
-                                x2="12"
-                                y2="21"></line></svg
+                                y2="6"></line><line x1="8" y1="2" x2="8" y2="6"
+                            ></line><line x1="3" y1="10" x2="21" y2="10"
+                            ></line></svg
                         >
                     </div>
                     <CardTitle className="text-3xl italic uppercase"
-                        >DEDICATED APP</CardTitle
+                        >{t("features.booking")}</CardTitle
                     >
                 </CardHeader>
                 <CardContent className="font-bold text-lg">
-                    A custom-branded ordering app on your own domain.
-                    Professionally designed and high-converting.
+                    {t("features.booking.desc")}
                 </CardContent>
             </Card>
 
@@ -109,18 +110,17 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            ><polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                            ></polygon></svg
+                            ><path
+                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                            ></path></svg
                         >
                     </div>
                     <CardTitle className="text-3xl italic uppercase"
-                        >5-STAR SUPPORT</CardTitle
+                        >{t("features.revenue")}</CardTitle
                     >
                 </CardHeader>
                 <CardContent className="font-bold text-lg">
-                    We're not just a software company. We're your tech partners,
-                    available whenever your kitchen is open.
+                    {t("features.revenue.desc")}
                 </CardContent>
             </Card>
 
@@ -139,19 +139,187 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            ><circle cx="12" cy="12" r="10"></circle><polyline
-                                points="12 6 12 12 16 14"></polyline></svg
+                            ><circle cx="12" cy="12" r="10"></circle><line
+                                x1="12"
+                                y1="16"
+                                x2="12"
+                                y2="12"></line><line
+                                x1="12"
+                                y1="8"
+                                x2="12.01"
+                                y2="8"></line></svg
                         >
                     </div>
                     <CardTitle className="text-3xl italic uppercase"
-                        >AUTO CAPACITY</CardTitle
+                        >{t("features.insight")}</CardTitle
                     >
                 </CardHeader>
                 <CardContent className="font-bold text-lg">
-                    Manage high volumes automatically. Set order limits to avoid
-                    kitchen stress during peak hours.
+                    {t("features.insight.desc")}
                 </CardContent>
             </Card>
         </div>
     </div>
+
+    <!-- Features Modal -->
+    <dialog
+        id="features-modal"
+        class="backdrop:bg-black/80 p-0 border-4 border-border shadow-shadow max-w-5xl w-[90%] md:w-full max-h-[90vh] overflow-hidden m-auto"
+    >
+        <div class="bg-white h-full flex flex-col p-8">
+            <div
+                class="flex justify-between items-center mb-8 border-b-4 border-border pb-6"
+            >
+                <h3 class="text-4xl font-heading uppercase">
+                    {t("features.modal.title")}
+                    <span class="bg-main px-2 border-2 border-border"
+                        >{t("features.modal.titleAccent")}</span
+                    >
+                </h3>
+                <button
+                    id="close-features-modal"
+                    class="border-2 border-border p-2 hover:bg-main transition-colors shadow-shadow-sm active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><line x1="18" y1="6" x2="6" y2="18"></line><line
+                            x1="6"
+                            y1="6"
+                            x2="18"
+                            y2="18"></line></svg
+                    >
+                </button>
+            </div>
+
+            <div class="overflow-y-auto pr-4 custom-scrollbar">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {
+                        [
+                            {
+                                title: t("features.list.staff.title"),
+                                desc: t("features.list.staff.desc"),
+                            },
+                            {
+                                title: t("features.list.time.title"),
+                                desc: t("features.list.time.desc"),
+                            },
+                            {
+                                title: t("features.list.security.title"),
+                                desc: t("features.list.security.desc"),
+                            },
+                            {
+                                title: t("features.list.inventory.title"),
+                                desc: t("features.list.inventory.desc"),
+                            },
+                            {
+                                title: t("features.list.qr.title"),
+                                desc: t("features.list.qr.desc"),
+                            },
+                            {
+                                title: t("features.list.pos.title"),
+                                desc: t("features.list.pos.desc"),
+                            },
+                            {
+                                title: t("features.list.branding.title"),
+                                desc: t("features.list.branding.desc"),
+                            },
+                            {
+                                title: t("features.list.preorder.title"),
+                                desc: t("features.list.preorder.desc"),
+                            },
+                            {
+                                title: t("features.list.capacity.title"),
+                                desc: t("features.list.capacity.desc"),
+                            },
+                            {
+                                title: t("features.list.multi.title"),
+                                desc: t("features.list.multi.desc"),
+                            },
+                            {
+                                title: t("features.list.analytics.title"),
+                                desc: t("features.list.analytics.desc"),
+                            },
+                            {
+                                title: t("features.list.privacy.title"),
+                                desc: t("features.list.privacy.desc"),
+                            },
+                        ].map((feature) => (
+                            <div class="border-2 border-border p-4 hover:bg-secondary-background transition-colors group">
+                                <h4 class="text-xl font-heading mb-2 uppercase group-hover:italic italic">
+                                    {feature.title}
+                                </h4>
+                                <p class="font-bold text-sm leading-tight">
+                                    {feature.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </dialog>
 </section>
+
+<script>
+    const modal = document.getElementById(
+        "features-modal",
+    ) as HTMLDialogElement;
+    const openBtn = document.getElementById("open-features-modal");
+    const closeBtn = document.getElementById("close-features-modal");
+
+    if (openBtn && modal) {
+        openBtn.addEventListener("click", () => {
+            modal.showModal();
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    if (closeBtn && modal) {
+        closeBtn.addEventListener("click", () => {
+            modal.close();
+            document.body.style.overflow = "";
+        });
+    }
+
+    // Close on click outside
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            const dialogDimensions = modal.getBoundingClientRect();
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close();
+                document.body.style.overflow = "";
+            }
+        });
+    }
+</script>
+
+<style>
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border: 2px solid #000;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #000;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #ff6b6b;
+    }
+</style>

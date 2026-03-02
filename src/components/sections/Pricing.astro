@@ -1,5 +1,10 @@
 ---
 import { Button } from "@/components/ui/button";
+import { StartStoreDialog } from "@/components/StartStoreDialog";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="pricing" class="mx-auto max-w-7xl py-24 px-4">
@@ -10,26 +15,54 @@ import { Button } from "@/components/ui/button";
             class="absolute top-0 right-0 w-64 h-64 bg-main/10 rounded-full -mr-32 -mt-32"
         >
         </div>
+
+        <!-- Limited Offer Banner -->
+        <div class="mb-12 inline-block">
+            <div
+                class="bg-black text-white px-6 py-3 border-4 border-border shadow-shadow rotate-1 transform hover:-rotate-1 transition-transform cursor-default"
+            >
+                <span
+                    class="text-xl md:text-3xl font-heading uppercase tracking-tighter"
+                >
+                    {t("pricing.offer")}
+                </span>
+            </div>
+        </div>
+
         <div class="relative z-10">
             <h2
                 class="text-5xl md:text-8xl font-heading uppercase leading-none mb-8 italic"
             >
-                START YOUR <br />
+                {t("pricing.title")}
+                <br />
                 <span class="bg-main px-2 border-2 border-border shadow-shadow"
-                    >DOMINATION.</span
+                    >{t("pricing.titleAccent")}</span
                 >
             </h2>
             <p class="text-xl md:text-2xl font-bold mb-12 max-w-2xl mx-auto">
-                Setup takes less than 24 hours. Join the hundreds of restaurants
-                already saving thousands every month.
+                {t("pricing.description")}
             </p>
             <div class="flex flex-col items-center justify-center gap-6">
-                <Button size="lg" className="h-20 px-16 text-2xl"
-                    >I'M IN, GIVE ME 0% COMM.</Button
+                <div
+                    class="text-6xl font-heading mb-4 bg-white border-2 border-border px-8 py-4 shadow-shadow"
                 >
+                    499 <span class="text-2xl font-bold"
+                        >{t("pricing.currency")}</span
+                    >
+                    <div
+                        class="text-sm font-heading bg-main px-4 py-1 border-2 border-border shadow-shadow-sm rotate-1 mt-4"
+                    >
+                        {t("pricing.aiBadge")}
+                    </div>
+                </div>
+                <StartStoreDialog client:load lang={lang}>
+                    <Button size="lg" className="h-20 px-16 text-2xl"
+                        >{t("pricing.cta")}</Button
+                    >
+                </StartStoreDialog>
                 <span
                     class="text-sm font-bold uppercase tracking-widest text-zinc-500"
-                    >NO CREDIT CARD REQUIRED. START FREE.</span
+                    >{t("pricing.footer")}</span
                 >
             </div>
         </div>
