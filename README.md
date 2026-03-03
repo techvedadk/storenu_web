@@ -1,4 +1,4 @@
-# Astro Starter Kit: Minimal
+# Astro Starter Kit: Minimal was used to create this project
 
 ```sh
 bun create astro@latest -- --template minimal
