@@ -108,7 +108,7 @@ export function StartStoreDialog({ children, lang = defaultLang }: StartStoreDia
                     {status === "success" ? (
                         <div className="py-8 text-center flex flex-col items-center gap-4">
                             <div className="h-16 w-16 bg-main rounded-full flex items-center justify-center border-2 border-border shadow-shadow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg xmlns="https://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             </div>
                             <p className="font-heading text-xl">{t('dialog.success.title')}</p>
                         </div>
