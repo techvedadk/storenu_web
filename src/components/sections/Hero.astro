@@ -1,5 +1,5 @@
 ---
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { StartStoreDialog } from "@/components/StartStoreDialog";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
@@ -30,9 +30,12 @@ const t = useTranslations(lang);
                 >{t("hero.cta")}</Button
             >
         </StartStoreDialog>
-        <Button variant="outline" size="lg" className="text-xl px-12 h-16"
-            >{t("hero.demo")}</Button
+        <a
+            href="https://admin.techcommerce.eu"
+            class={buttonVariants({ variant: "outline", size: "lg", className: "text-xl px-12 h-16" })}
         >
+            {t("hero.demo")}
+        </a>
     </div>
 
     <div class="mt-20 flex justify-center">
